@@ -29,11 +29,12 @@ summary a > i {
  margin-left: 30%;
  margin-top: 10px;
  }
- .search > input{
-	padding: 10px;
-	width: 20rem;
-	border-radius: 1rem;
- }
+ .search > input {
+    padding: 10px;
+    width: 20rem;
+    border-radius: 1rem;
+    border: 2px solid #000000;
+}
  
 .perfil{
 	width: 100%;
@@ -102,6 +103,42 @@ summary a > i {
 	margin-top: 20px;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.modal{
+	width: 75%;
+	height: 100%;
+	background: linear-gradient(
+		to top,
+		#000e8b,#7700ff,#022757
+	);
+	position: absolute;
+	top: 0;
+	color: #ffffff;
+	margin-left: 20%;
+	text-align: center;
+
+}
+.delet-modal {
+	position: absolute;
+	right: 17px;
+	top: 10px;
+	padding: 20px;
+	transition: all 1s ;
+}
+.delet-modal:hover{
+	background-color: #000000;
+}
+.img-modal{
+	margin-left: 2rem;
+	width: 20rem;
+	height: 20rem;
+}
+div > p{
+	text-align: center;
+	margin-top: 5rem;
+	
+
+}
+
 
 
 @media (width: 430px) {
@@ -130,6 +167,38 @@ summary a > i {
 	}
 	h2 {
 		font-size: 13px;
+	}
+	.modal{
+		width: 100%;
+		height: 70%;
+		background: linear-gradient(
+			to top,
+			#000e8b,#7700ff,#022757
+		);
+		position: absolute;
+		top: 0;
+		color: #ffffff;
+	
+	}
+	.delet-modal {
+		position: absolute;
+		right: 17px;
+		top: 10px;
+		padding: 20px;
+	}
+	.delet-modal:hover{
+		background-color: #000000;
+	}
+	.img-modal{
+		margin-left: 2rem;
+		width: 73%;
+		height: 50%;
+	}
+	div > p{
+		text-align: center;
+		margin-top: 5rem;
+		
+
 	}
 
 } 
