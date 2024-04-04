@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', getApi)
 
+const modal = document.querySelector('.modal')
 function getApi() {
     fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
@@ -15,7 +16,7 @@ function creatProducts(products) {
 
   const imgCard = document.createElement('img')
   imgCard.src = products.image
-  imgCard.alt = products.title
+  imgCard.alt = products.price
   imgCard.width ='150'
   imgCard.height= '150'
 
@@ -28,36 +29,41 @@ function creatProducts(products) {
   cardsProducts.append(conteinerCard,imgCard,titleCard,)
   document.querySelector('.block3').append(cardsProducts)
 
-
+  modal.style.visibility= 'hidden'
 
   //MODAL
-  cardsProducts.addEventListener('click', function creatModal(product) {
+  cardsProducts.addEventListener('click', function creatModal() {
 
 
     const contentModal = document.createElement('div')
-    contentModal.classList.add('modal')
+    contentModal.classList.add('myModal')
   
     const btnModal = document.createElement('button')
     btnModal.classList.add('delet-modal')
     btnModal.textContent = 'X'
     
+ 
   
     const textparrafo = document.createElement('p')
-    textparrafo.textContent = product.description
+    textparrafo.textContent = products.description
   
     const imgModal = document.createElement('img')
     imgModal.classList.add('img-modal')
-    imgModal.src = product.image
+    imgModal.src = products.image
     
     const h2Modal = document.createElement('h2')
-    h2Modal.textContent = product.price
+    h2Modal.textContent = products.price
     const h3Modal = document.createElement('h3')
-    h3Modal.textContent = product.category
+    h3Modal.textContent = products.category
     
     contentModal.append(btnModal,textparrafo,imgModal,h2Modal,h3Modal)
-    document.querySelector('.modal').append(contentModal)
+    document.querySelector('.modal').appendChild(contentModal)
+    modal.style.visibility= 'visible'
+
+
+    btnModal.addEventListener('click', function myButton() {
+      modal.style.visibility= 'hidden'
+    })
   })
 
 }
-
-
